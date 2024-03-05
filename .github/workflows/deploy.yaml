@@ -192,6 +192,12 @@ jobs:
         env:
           REACT_APP_WELCOME_TEXT: ${{ secrets.REACT_APP_WELCOME_TEXT }}
 
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          folder: build
+
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
