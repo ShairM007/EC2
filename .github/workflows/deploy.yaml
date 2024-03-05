@@ -154,3 +154,5 @@ jobs:
           port: ${{ secrets.EC2_PORT }}
           script: |
             ls
+            cd EC2
+            ls
