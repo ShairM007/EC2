@@ -156,3 +156,6 @@ jobs:
             ls
             cd EC2
             ls
+            npm i 
+            pm2 status
+            pm2 restart nextapp
