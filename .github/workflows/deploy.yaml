@@ -74,6 +74,46 @@
 #           folder: build
 
     
+# name: CI/CD Pipeline for React App
+
+# on:
+#   push:
+#     branches: [main]
+#   workflow_dispatch:
+
+# permissions:
+#   contents: write
+
+# jobs:
+#   build_and_deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 14
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Build Project
+#         run: npm run build
+#         env:
+#           REACT_APP_WELCOME_TEXT: ${{ secrets.REACT_APP_WELCOME_TEXT }}
+
+#       - name: Deploy to EC2
+#         uses: appleboy/scp-action@v0.1.7
+#         with:
+#           host: ${{ secrets.EC2_HOST }}
+#           username: ${{ secrets.EC2_USERNAME }}
+#           password: ${{ secrets.EC2_PASSWORD }}
+#           source: "build/*"
+#           target: "/path/to/your/app/on/ec2/"
+
 name: CI/CD Pipeline for React App
 
 on:
@@ -106,11 +146,11 @@ jobs:
           REACT_APP_WELCOME_TEXT: ${{ secrets.REACT_APP_WELCOME_TEXT }}
 
       - name: Deploy to EC2
-        uses: appleboy/scp-action@v0.1.7
+        uses: appleboy/ssh-action@v2
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
-          password: ${{ secrets.EC2_PASSWORD }}
-          source: "build/*"
-          target: "/path/to/your/app/on/ec2/"
-
+          key: ${{ secrets.EC2_PASSWORD}}
+          port: ${{ secrets.EC2_PORT }}
+          script: |
+            ls
