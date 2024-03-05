@@ -27,6 +27,6 @@ jobs:
             ls
             cd EC2
             git pull origin main
-            echo "hello-World"
+            
 
         
