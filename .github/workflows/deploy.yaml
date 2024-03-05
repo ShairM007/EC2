@@ -154,6 +154,7 @@ jobs:
           port: ${{ secrets.EC2_PORT }}
           script: |
             ls
+            npm audit fix --force
             cd EC2
             git pull origin main
             ls
