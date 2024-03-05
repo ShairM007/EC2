@@ -26,6 +26,7 @@ jobs:
           script: |
             ls
             cd EC2
+            git pull origin main
             npm i
          
             
