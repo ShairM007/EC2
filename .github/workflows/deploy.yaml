@@ -205,4 +205,8 @@ jobs:
           script: |
             cd EC2
             ls
+          timeout: 30s
+          command_timeout: 10m
+          proxy_port: ***
+          proxy_timeout: 30s
         
