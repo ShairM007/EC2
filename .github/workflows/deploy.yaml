@@ -16,15 +16,15 @@ jobs:
       - name: print Helloo
         run: echo "Hello world"
 
-      # - name: Deploy to EC2
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.EC2_HOST }}
-      #     username: ${{ secrets.EC2_USERNAME }}
-      #     key: ${{ secrets.EC2_PASSWORD }}
-      #     port: ${{ secrets.EC2_PORT }}
-      #     script: |
-      #       ls
-      #       echo "hello-World"
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: 54.147.140.220
+          username: ubuntu
+          key: ${{ secrets.EC2_PASSWORD }}
+          port: 22
+          script: |
+            ls
+            echo "hello-World"
 
         
