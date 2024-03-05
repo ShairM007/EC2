@@ -25,7 +25,8 @@ jobs:
           port: 22
           script: |
             ls
-            
+            cd EC2
+            npm i
          
             
 
