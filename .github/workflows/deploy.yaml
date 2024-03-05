@@ -106,7 +106,7 @@ jobs:
           REACT_APP_WELCOME_TEXT: ${{ secrets.REACT_APP_WELCOME_TEXT }}
 
       - name: Deploy to EC2
-        uses: appleboy/scp-action@v0.2.0
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
