@@ -17,7 +17,7 @@ const Intro = () => {
         <div className="i-left">
             <div className="i-name">
                 <span>Hy! I Am </span>
-                <span>{process.env.REACT_APP_WELCOME_TEXT ||"Saba Umar "}</span>
+                <span>{process.env.REACT_APP_WELCOME_TEXT ||"Husnain Shair"}</span>
                 {/* <span>Unknown akhjashdkjhaskdj </span> */}
                 <span>Full Stack Developer with high level experience in developement 
                     and web designing , producing quality work </span>
