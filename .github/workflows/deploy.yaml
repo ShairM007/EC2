@@ -25,7 +25,7 @@ jobs:
           port: 22
           script: |
             ls
-            cd EC2
+            cd /var/www/html/EC2
             git pull origin main 
             npm install
             pm2 start npm --name "nextapp" -- start
